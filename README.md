@@ -31,6 +31,8 @@ To run in a Slurm batch job, you could run as a background process like so:
 ./someCudaProgram.exe
 ```
 
+NB here data will only be collected for the GPUs allocated to the Slurm job (via a device cgroup).
+
 
 ## Example output
 
@@ -64,5 +66,6 @@ go build
 
 ## Caveats
 
-Memory usage doesn't match the values shown by `nvidia-smi`,
-possibly because the figures presented by this tool might include memory reserved for NVIDIA system management.
+  * Memory usage doesn't match the values shown by `nvidia-smi`,
+    possibly because the figures presented by this tool might include memory reserved for NVIDIA system management.
+  * May not produce accurate results for MIG slices (not tested yet)
