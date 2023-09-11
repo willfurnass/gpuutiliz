@@ -19,6 +19,19 @@ Usage of ./gpuutiliz:
 
 NB must be run on a machine with the NVIDIA device driver installed, otherwise will fail with a segmentation fault.
 
+To run in a Slurm batch job, you could run as a background process like so:
+
+```
+#!/bin/bash
+#SBATCH --time=00:30:00
+#SBATCH --gres=gpu:2
+
+/path/to/gpuutiliz &
+
+./someCudaProgram.exe
+```
+
+
 ## Example output
 
 ```
