@@ -67,6 +67,4 @@ go build
 ## Caveats
 
   * Assuming Slurm GPU job tasks are all single-node
-  * Memory usage doesn't match the values shown by `nvidia-smi`,
-    possibly because the figures presented by this tool might include memory reserved for NVIDIA system management.
   * May not produce accurate results for MIG slices (not tested yet)

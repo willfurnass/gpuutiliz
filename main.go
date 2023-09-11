@@ -57,7 +57,7 @@ func NewDevSample(d nvml.Device) devSample {
 	s.utilPC = util.Gpu
 	s.memIOPC = util.Memory
 
-	devMemInfo, ret := nvml.DeviceGetMemoryInfo(d)
+	devMemInfo, ret := nvml.DeviceGetMemoryInfo_v2(d)
 	if ret != nvml.SUCCESS {
 		log.Fatalf("Unable to get mem info for device %s: %v", s.uuid, nvml.ErrorString(ret))
 	}
